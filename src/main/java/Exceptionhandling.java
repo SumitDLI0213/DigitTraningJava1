@@ -25,25 +25,13 @@ public class Exceptionhandling
 			 arr[pos]=val;
 			 System.out.println("data loaded");
 		 }
-		 catch(ArithmeticException e1)
+		 catch(ArithmeticException|NegativeArraySizeException e1)
 		 {
-			 System.out.println("arthmic exception");
+			 System.out.println("arthmic exception NegativeArraySizeException");
 		 }
-		 catch(NegativeArraySizeException e2)
+		 catch(ArrayIndexOutOfBoundsException|InputMismatchException|NullPointerException e3)
 		 {
-			 System.out.println("Negative array execpton");
-		 }
-		 catch(ArrayIndexOutOfBoundsException e3)
-		 {
-			 System.out.println("array index out of bound exception");
-		 }
-		 catch(InputMismatchException e4)
-		 {
-			 System.out.println("input missmatch exception");
-		 }
-		 catch(NullPointerException e5)
-		 {
-			 System.out.println("Null pointer  exception");
+			 System.out.println("array index out of bound exception InputMismatchException");
 		 }
 		 catch(Exception e)
 		 {
