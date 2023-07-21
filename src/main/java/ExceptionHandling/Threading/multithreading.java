@@ -2,7 +2,7 @@ package ExceptionHandling.Threading;
 
 import java.util.Scanner;
 
-class banking extends Thread
+class banking implements Runnable
 {
 	public void run()
 	{
@@ -15,7 +15,7 @@ class banking extends Thread
         System.out.println("banking completed");
 	}
 }
-class add extends Thread
+class add implements Runnable
 {
 	public void run()
 	{
@@ -30,7 +30,7 @@ class add extends Thread
         System.out.println("Addition completed");
 	}
 }
-class printing extends Thread 
+class printing implements Runnable
 {
 	public void run()
 	{
@@ -58,8 +58,11 @@ public class multithreading
 		banking b=new banking();
 		add a=new add();
 		printing p=new printing();
-		b.start();
-		a.start();
-		p.start();
+		Thread t1=new Thread(b);
+		Thread t2=new Thread(a);
+		Thread t3=new Thread(p);
+		t1.start();
+		t2.start();
+		t3.start();
 	}
 }
